@@ -244,7 +244,7 @@ export SRCABI="FreeBSD:${SRCREVISION%%.*}:${PRODUCT_ARCH}"
 
 # define and bootstrap target directories
 export STAGEDIR="${STAGEDIRPREFIX}${CONFIGDIR}/${PRODUCT_ARCH}"
-export TARGETDIRPREFIX="/usr/local/opnsense/build"
+export TARGETDIRPREFIX="/usr/local/comsecurity/build"
 export TARGETDIR="${TARGETDIRPREFIX}/${PRODUCT_SETTINGS}/${PRODUCT_ARCH}"
 export IMAGESDIR="${TARGETDIR}/images"
 export LOGSDIR="${TARGETDIR}/logs"
@@ -565,7 +565,7 @@ setup_chroot()
 
 setup_version()
 {
-	VERSIONDIR="${2}/usr/local/opnsense/version"
+	VERSIONDIR="${2}/usr/local/comsecurity/version"
 
 	# clear previous in case of rename
 	rm -rf ${VERSIONDIR}
@@ -974,7 +974,7 @@ install_packages()
 		# create the package version file for initial install
 		if [ "${PKG}" = "${PRODUCT_CORE}" ]; then
 			pkg -c ${BASEDIR} query %v ${PKG} > \
-			    ${BASEDIR}/usr/local/opnsense/version/pkgs
+			    ${BASEDIR}/usr/local/comsecurity/version/pkgs
 		fi
 	done
 }
